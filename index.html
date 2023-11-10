@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Oro Ninja</title>
+</head>
+<body>
+    <h1>Oro Ninja</h1>
+    <p>¡Bienvenido, Ninja! Tienes {{ session['gold'] }} de oro.</p>
+
+    <form action="/process_money" method="post">
+        <input type="hidden" name="building" value="farm" />
+        <input type="submit" value="Find Gold at the Farm!"/>
+    </form>
+
+    <form action="/process_money" method="post">
+        <input type="hidden" name="building" value="cave" />
+        <input type="submit" value="Explore the Cave!"/>
+    </form>
+
+    <form action="/process_money" method="post">
+        <input type="hidden" name="building" value="house" />
+        <input type="submit" value="Go to the House!"/>
+    </form>
+
+    <form action="/process_money" method="post">
+        <input type="hidden" name="building" value="casino" />
+        <input type="submit" value="Gamble at the Casino!"/>
+    </form>
+
+</body>
+</html>

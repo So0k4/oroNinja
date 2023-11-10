@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Oro Ninja</title>
+</head>
+<body>
+    <h1>Oro Ninja</h1>
+    <p>Ganaste (o perdiste) {{ earnings }} de oro.</p>
+    <h2>Activities:</h2>
+    <ul>
+        {% for activity in session['activities'] %}
+            <li>{{ activity }}</li>
+        {% endfor %}
+    </ul>
+
+    <!-- Bono SENSEI: Muestra el botón de reinicio si se cumple la condición de victoria -->
+    {% if session['win'] %}
+        <form action="/reset" method="get">
+            <input type="submit" value="Restart Game"/>
+        </form>
+    {% endif %}
+
+    <form action="/process_money" method="post">
+        <input type="hidden" name="building" value="farm" />
+        <input type="submit" value="Find Gold at the Farm!"/>
+    </form>
+
+</body>
+</html>
